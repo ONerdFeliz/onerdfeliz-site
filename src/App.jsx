@@ -100,8 +100,9 @@ const HomePage = () => {
             to="/filmes" 
             className="bg-transparent text-transparent px-28 py-12 rounded-full font-bold transition-colors absolute bottom-[5%] left-1/2 transform -translate-x-1/2"
           >
+          <Link to="/series">
             Explore Agora
-          </Link to="/series">
+          </Link>
         </div>
       </section>
 
