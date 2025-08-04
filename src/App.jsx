@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Menu, X, Film, Tv, Gamepad2, User, Mail, Home } from 'lucide-react';
-import './App.css';
+import '/src/App.css'; // Caminho absoluto para o App.css
 
 // Importando as imagens
-import heroImage from './assets/ue8zJN6xhczO.jpg';
+// import heroImage from './assets/ue8zJN6xhczO.jpg'; // Removido, pois estamos usando capa-GPT.png
 import thunderboltsImage from './assets/Ug1SLGZFEysS.jpg';
 import gamingSetupImage from './assets/Bmx8zmjzDXgR.jpg';
 
@@ -16,8 +16,8 @@ const Header = () => {
     <header className="bg-gray-900 text-white shadow-lg">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold text-purple-400 hover:text-purple-300 transition-colors">
-            OnerdFeliz
+          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <img src="/logo.png" alt="OnerdFeliz" className="h-12 w-auto" />
           </Link>
           
           {/* Desktop Navigation */}
@@ -90,17 +90,15 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-purple-900 to-blue-900 flex items-center">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          className="absolute inset-0 bg-cover bg-center-bottom"
+          style={{ backgroundImage: `url(/capa-GPT.png)` }}
         ></div>
-        <div className="relative container mx-auto px-4 text-white">
-          <h1 className="text-5xl font-bold mb-4">Bem-vindo ao OnerdFeliz!</h1>
-          <p className="text-xl mb-6">Seu portal para o universo geek e nerd - filmes, séries e jogos!</p>
+         <div className="relative z-10 flex justify-center items-center h-full">
           <Link 
             to="/filmes" 
-            className="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition-colors"
+            className="bg-transparent text-transparent px-28 py-12 rounded-full font-bold transition-colors absolute bottom-[5%] left-1/2 transform -translate-x-1/2"
           >
             Explore Agora
           </Link>
